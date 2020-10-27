@@ -95,66 +95,83 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
 html {
-  background-color: #fff;
-  background: url(../img/my-hero-background.png) no-repeat center center fixed;
-  background-size: cover; 
+  background-image: linear-gradient(#5B5D5E, #3B3C3E);
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family:'Ubuntu', sans-serif;
-  padding: 2em;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 2em;
   font-size: 1.25em;
-  height: 100%;
-}
-
-.wrapper {
-  /*add display:flex and set justify-content to space-between*/
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
-
-.div-1, .div-2, .div-3 {
-  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
-  align-items: center;
-  border-radius: 20px;
   color: #fff;
-  display: flex;
-  line-height: 1.5em;
-  font-size: 1.6em;
-  background-color: rgba(73, 243, 232, 0.7);
-  font-family: 'Ubuntu', sans-serif;
-  height: auto;
   justify-content: center;
-  width: 30%;
-  padding: 8px 8px;
 }
 
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+}
 
+p span {
+    font-family: 'Syncopate', sans-serif;
+}
+
+header,
+footer {
+  display: flex;
+  background-color: #404040;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+header h1 {
+    font-family: 'Infinity', sans-serif;
+    font-size: 3em;
+    margin: auto;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #0798f2;
+  width: 100%;
+}
+
+main p {
+    font-size: 1.35em;
+}
+
+.flex-items {
+    color: #fff;
+    line-height: 1.5em;
+    font-size: 1em;
+    background-color: rgba(78, 148, 191, 0.7);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  footer {
+      border-top: 1px solid #0798f2;
+  }
+
+  footer i {
+      padding: 30px 20px 0 0;
+  }
 
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
-@media screen and (min-width: 786px) {
-    h1 {
-        font-size: 3em;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    h1 {
-        font-size: 4em;
-    }
-}
-
 
 /*
  * Hide visually and from screen readers:
@@ -231,6 +248,37 @@ body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+
+
+@media all and (max-width: 768px) {
+  body {
+      padding: 1em;
+    }
+
+    .flex-items {
+        flex-basis: 100%;
+        border-bottom: none;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 0 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .flex-items {
+        flex-basis: 30%;
+        border-bottom: none;
+    }
+
+  #div-1 p,  
+  #div-2 p,
+  #div-3 p {
+      border-left: 1px solid #0798f2;
+      border-right: 1px solid #0798f2;
+      padding: 0 40px;
+    }
+
+}
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
@@ -315,3 +363,4 @@ body {
         page-break-after: avoid;
     }
 }
+ 
